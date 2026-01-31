@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --forest-green: #1B4332;
+  --forest-green-light: #2D6A4F;
+  --gold: #C5A347;
+  --gold-light: #D4B85A;
+  --paper: #FDFCFB;
+  --paper-dark: #F5F3F0;
+  --text-dark: #1a1a1a;
+  --text-muted: #6b6b6b;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-forest: var(--forest-green);
+  --color-forest-light: var(--forest-green-light);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-paper: var(--paper);
+  --color-paper-dark: var(--paper-dark);
+  --font-playfair: var(--font-family-playfair);
+  --font-inter: var(--font-family-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+.btn-outlined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--forest-green);
+  color: var(--forest-green);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outlined:hover {
+  background: var(--forest-green);
+  color: var(--paper);
+}
+
+.btn-outlined-gold {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn-outlined-gold:hover {
+  background: var(--gold);
+  color: var(--text-dark);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--text-dark);
 }
